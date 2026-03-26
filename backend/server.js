@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 //  YAHAN apna MongoDB URL daalna
-mongoose.connect("mongodb+srv://test:test123@jobportal.8dqhawo.mongodb.net/test?retryWrites=true&w=majority")
+mongoose.connect(process.env.MONGO_URL)
 .then(() => console.log("MongoDB Connected"))
 .catch(err => console.log(err));
 
