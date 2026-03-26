@@ -7,7 +7,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
-    const res = await axios.get("https://contact-app-oxhf.onrender.com");
+    const res = await axios.get("https://contact-app-oxhf.onrender.com/contacts");
     setContacts(res.data);
   };
 
@@ -18,14 +18,14 @@ function App() {
   const addContact = async () => {
     if (!name || !phone) return alert("Fill all fields");
 
-    await axios.post("http://localhost:5000/add", { name, phone });
+    await axios.post("https://contact-app-oxhf.onrender.com/add", { name, phone });
     fetchContacts();
     setName("");
     setPhone("");
   };
 
   const deleteContact = async (id) => {
-    await axios.delete(`http://localhost:5000/delete/${id}`);
+    await axios.delete(`https://contact-app-oxhf.onrender.com/delete/${id}`);
     fetchContacts();
   };
 
