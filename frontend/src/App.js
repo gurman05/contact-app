@@ -7,7 +7,7 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   const fetchContacts = async () => {
-    const res = await axios.get("http://localhost:5000/contacts");
+    const res = await axios.get("https://contact-app-oxhf.onrender.com");
     setContacts(res.data);
   };
 
